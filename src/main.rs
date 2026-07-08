@@ -1,10 +1,1 @@
-use std::collections::HashSet;
-
-fn main() {
-    let mut concert_queue: HashSet<&str> = HashSet::new(); // HashSet prevents duplicate value, like a Set in TS
-
-    concert_queue.insert("value");
-    concert_queue.insert("value");
-    concert_queue.insert("value");
-    println!("{:?}", concert_queue)
-}
+fn main() {}
