@@ -1,9 +1,16 @@
-#![allow(unused_variables)]
+// #![allow(unused)]
 
-type Meters =  i32 ;
-
+const TOUCHDOWN_POINTS:i32 = 6;
 fn main() {
-let  mile_race_length: Meters = 1600;
-let  two_mile_race_length: Meters = 3200;
+let season: &str  = "Fall";
+let mut  points_scored: i32 = 28;
+points_scored = 28;
 
-}
+
+
+let  event_time: &str = "06:00";
+let  event_time: i32 = 6;
+
+
+
+println!("my season {TOUCHDOWN_POINTS}, {season}, {points_scored} , {points_scored}, {event_time}")}
