@@ -1,8 +1,10 @@
 
 fn main() {
+let value : i32 = -15;
+println!("{}", value.abs());
+println!("{}", value.pow(2));
 
-println!("Hello world, \nHow are you?");
-println!("\tHello world, \"How are you?\"");
-let filepath = r"C:\files";
-println!("{filepath}")
+let empty_screen: &str = "          em         ";
+println!("{}", empty_screen.trim());
+
 }
