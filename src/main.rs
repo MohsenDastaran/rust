@@ -1,10 +1,6 @@
 
 fn main() {
-let value : i32 = -15;
-println!("{}", value.abs());
-println!("{}", value.pow(2));
-
-let empty_screen: &str = "          em         ";
-println!("{}", empty_screen.trim());
+let pi: f32 = 3.14159455654534545785545465411;
+println!("{}",pi.floor() );
 
 }
