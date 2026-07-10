@@ -1,14 +1,11 @@
+const TAX_RATE: f64 = 1.25;
+
 
 fn main() {
-  let grams_of_protein = "100.25";
-  println!("grams_of_protein: {}", grams_of_protein);
-  let grams_of_protein = 100.25;
-  println!("grams_of_protein: {}", grams_of_protein);
-  let mut grams_of_protein = 100;
-  println!("grams_of_protein: {}", grams_of_protein);
+let tax_rate_2: f64 = 1.30;
 
-  grams_of_protein = 105;
-  println!("grams_of_protein: {}", grams_of_protein);
+  println!("Tax rate is : {}", TAX_RATE);
+  println!("Tax rate 2 is : {}", tax_rate_2);
 
 
 
