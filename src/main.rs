@@ -1,21 +1,10 @@
 
 fn main() {
-    //  1 to 30 (not 31)
-let month_days = 1..31;
 
+let  month_days: std::ops::RangeInclusive<i32> = 1..=31;
 
+ let letters: std::ops::Range<char> = 'b'..'j';
 
-    //  1 to 31
-let  month_days = 1..=31;
+ println!("Something")
 
- for i in month_days {
-    println!("{i}")
- }
-
-// can be used in chars
- let letters = 'b'..'j';
-
-  for l in letters {
-    println!("{l}")
- }
 }
