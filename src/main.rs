@@ -1,14 +1,14 @@
 
 fn main() {
+let first = false;
+let two  = true;
 
-println!("{}", "Mohsen" == "Dastaran" );
-println!("{}", "Mohsen" != "Dastaran" );
-println!("{}", "Mohsen" == "mohsen" );
-println!("{}", 13 == 13 );
-println!("{}", "13" != "13" );
-println!("{}", "26.1" == "26.1" );
 
-println!("{}", 26.1 == 26.1 );
-println!("{}", 26 == 26.0 as i16 );
+let and: bool = first && two;
+let or: bool = first || two;
+
+
+println!("{} {}", and, or );
+
 
 }
