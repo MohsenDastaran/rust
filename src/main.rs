@@ -1,12 +1,17 @@
 
 fn main() {
 let miles_away: i32 = 50;
-let miles_away_i8: i8 = miles_away as i8;
-// or different type 
 
-let miles_away_f64: f64 = 412452.45324523 ;
-let miles_away_i8: i16 = miles_away_f64 as i16 ;
+println!("add :{}", 4+5 );
+println!("multiple :{}", 4 * 5 );
+println!("division :{}", 14 / 5 );
 
-println!("my pie is:{miles_away_f64} {miles_away_i8}" );
+// the output is : division :2
+// for decimals: 
+
+println!("division :{}", 14.0 / 5.0 );
+
+
+println!("remainder :{}", 3 % 2 );
 
 }
