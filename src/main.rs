@@ -1,14 +1,8 @@
 
 fn main() {
-let first = false;
-let two  = true;
+let numbers: [i32; 3] = [20, 25, 35];
 
-
-let and: bool = first && two;
-let or: bool = first || two;
-
-
-println!("{} {}", and, or );
+println!("{numbers:#?} {}" , numbers.len());
 
 
 }
