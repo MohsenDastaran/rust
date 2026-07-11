@@ -1,13 +1,21 @@
 
 fn main() {
     //  1 to 30 (not 31)
-let employee: (&str, i32, &str) = ("Mohsen", 30, "Dastaran");
-
-println!("{} {}", employee.0 , employee.2);
+let month_days = 1..31;
 
 
-let (first, age, last) = employee;
 
-println!("{} {}", first , last );
+    //  1 to 31
+let  month_days = 1..=31;
 
+ for i in month_days {
+    println!("{i}")
+ }
+
+// can be used in chars
+ let letters = 'b'..'j';
+
+  for l in letters {
+    println!("{l}")
+ }
 }
