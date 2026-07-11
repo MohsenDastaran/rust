@@ -1,9 +1,14 @@
 
 fn main() {
-let mut year: i32 = 2025;
-year += 1;
-year *= 2;
 
-println!("remainder: {}", !(year > 2024) );
+println!("{}", "Mohsen" == "Dastaran" );
+println!("{}", "Mohsen" != "Dastaran" );
+println!("{}", "Mohsen" == "mohsen" );
+println!("{}", 13 == 13 );
+println!("{}", "13" != "13" );
+println!("{}", "26.1" == "26.1" );
+
+println!("{}", 26.1 == 26.1 );
+println!("{}", 26 == 26.0 as i16 );
 
 }
