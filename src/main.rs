@@ -1,9 +1,13 @@
 
 fn main() {
-let numbers: [i32; 12] = [20, 25, 35, 3, 3,23,3,23,23,32,323,232];
+    //  1 to 30 (not 31)
+let employee: (&str, i32, &str) = ("Mohsen", 30, "Dastaran");
 
-println!("{numbers:#?}");
+println!("{} {}", employee.0 , employee.2);
 
-println!("{}", dbg!(56465 / 6545) + 1)
+
+let (first, age, last) = employee;
+
+println!("{} {}", first , last );
 
 }
