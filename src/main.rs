@@ -1,9 +1,13 @@
 fn main() {
-    let season = "summer";
+    let season = "spring";
 
     if season == "summer" {
         println!("summer")
     } else if season == "winter" {
-        println!("summer")
+        println!("winter")
+    } else if season == "fall" {
+        println!("fall")
+    } else if season == "spring" {
+        println!("spring")
     }
 }
