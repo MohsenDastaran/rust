@@ -1,13 +1,13 @@
-fn main() {
-    let season = "spring";
+fn is_even(num: &i32) -> &str {
+    // return num % 2 == 0;
 
-    if season == "summer" {
-        println!("summer")
-    } else if season == "winter" {
-        println!("winter")
-    } else if season == "fall" {
-        println!("fall")
-    } else if season == "spring" {
-        println!("spring")
-    }
+    // with if
+    if num % 2 == 0 { "true" } else { "false" }
+}
+
+fn main() {
+    println!("{}", is_even(&2));
+    println!("{}", is_even(&3));
+    println!("{}", is_even(&4));
+    println!("{}", is_even(&5));
 }
