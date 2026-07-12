@@ -1,10 +1,11 @@
 
 fn main() {
+learn_lang("Rust");
 
-let  month_days: std::ops::RangeInclusive<i32> = 1..=31;
 
- let letters: std::ops::Range<char> = 'b'..'j';
+fn learn_lang(lang: &str) {
+    println!("Im learning {lang}")
+}
 
- println!("Something")
 
 }
