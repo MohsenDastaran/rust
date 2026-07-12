@@ -1,12 +1,14 @@
 
 fn main() {
-    println!("{}", square(5));
-    
-    fn square(number: i32) -> i32 {
-         number * number
+  let result = mystery();
+
+  println!("{:#?}", result);
+
+  
+    fn mystery() -> i32{
+        println!("dfg");
+        5
     }
-
-
 
 //     learn_lang_via("Rust"     , "Course");
 // // 2 parameter 
