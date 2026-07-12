@@ -1,16 +1,9 @@
-
 fn main() {
-    let result = 32;
-   let calc =  {
-        let inner_value = 5 + 4;
+    let season = "summer";
 
-        inner_value * result 
-    };
-    println!("{}", calc)
-
-
-
-
-
-
+    if season == "summer" {
+        println!("summer")
+    } else if season == "winter" {
+        println!("summer")
+    }
 }
