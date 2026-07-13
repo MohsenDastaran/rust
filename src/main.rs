@@ -1,14 +1,17 @@
 fn main() {
-    let number = -5;
+    let mut counter: i32 = 0;
+    loop {
+        counter += 1;
 
-    match number {
-        2 | 4 | 6 | 8 => println!("Even"),
-        1 | 3 | 5 | 7 => println!("Odd"),
-        _ => println!("Unknown"),
-    }
+        let _ = counter <= 2 && continue; // continue if counter is less than or equal to 2
 
-    match number {
-        value if value % 2 == 0 => println!("Even"),
-        _ => println!("Odd"),
+        println!("Hello, world! {} times", counter);
+
+        if counter >= 5 {
+            break;
+        }
+
+        //  or
+        // let _ = counter >= 5 && break;
     }
 }
