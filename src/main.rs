@@ -1,10 +1,10 @@
 fn main() {
     let age: i8 = 29;
+    let is_handsome: bool = true;
 
-    {
-        let is_handsome: bool = true;
-        // is_handsome is in memory here
-    }
-    // println!("{is_handsome}")
-    // is_handsome is not in memory because its out of scope
+    println!("{age}");
+    println!("{is_handsome}");
+    // both exist here
 }
+
+// after scope, because of LIFO, first, is_handsome will be removed & after that, age.
