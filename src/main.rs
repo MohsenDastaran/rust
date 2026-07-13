@@ -1,13 +1,14 @@
-fn is_even(num: &i32) -> &str {
-    // return num % 2 == 0;
-
-    // with if
-    if num % 2 == 0 { "true" } else { "false" }
-}
-
 fn main() {
-    println!("{}", is_even(&2));
-    println!("{}", is_even(&3));
-    println!("{}", is_even(&4));
-    println!("{}", is_even(&5));
+    let number = -5;
+
+    match number {
+        2 | 4 | 6 | 8 => println!("Even"),
+        1 | 3 | 5 | 7 => println!("Odd"),
+        _ => println!("Unknown"),
+    }
+
+    match number {
+        value if value % 2 == 0 => println!("Even"),
+        _ => println!("Odd"),
+    }
 }
