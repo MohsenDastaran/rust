@@ -1,4 +1,10 @@
 fn main() {
-    let age: i8 = 29;
-    let year: i8 = age;
+    // store in executable
+    let food: &str = "pasta";
+
+    // store in heap, its gonna change
+    let text: String = String::new();
+    let candy = String::from("Kitkat");
+
+    println!("{candy}")
 }
