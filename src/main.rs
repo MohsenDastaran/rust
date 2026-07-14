@@ -1,13 +1,10 @@
 fn main() {
-    // store in heap, its gonna change
-    let mut candy: String = String::from("Kitkat");
-    println!("{candy}");
+    let person: String = String::from("Mohsen");
+    let mo: String = person;
 
-    candy.push_str(" Candy");
+    // println!("{}", person);
+    println!("{}", mo);
 
-    println!("{candy}");
-
-    // if text is too long, it will move to the new heap location automatically
-    candy.push_str(" Candy fgdfgdfgdfgdfgdg");
-    println!("{candy}");
+    // 1 memory but 2 refrences(pointers), who's responsible for cleaning up?
+    // rust will move the ownership to second variable
 }
