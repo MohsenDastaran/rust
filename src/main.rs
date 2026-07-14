@@ -1,13 +1,9 @@
 fn main() {
     let person: String = String::from("Mohsen");
-    let mo: String = person;
 
-    // no drop:
+    // this will not move ownership, it clones the value, different heap memory
+    let mo: String = person.clone();
+
+    println!("{}", person);
     println!("{}", mo);
-
-    // drop manually
-    drop(mo);
-
-    // error:
-    // println!("{}", mo);
-} // auto drop on closing curly bracket
+}
