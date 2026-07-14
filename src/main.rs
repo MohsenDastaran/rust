@@ -1,14 +1,13 @@
 fn main() {
-    // store in binary executable
-    let mut food: &str = "pasta";
-    println!("{food}");
-
-    food = "xfgcxfg";
-    println!("{food}");
-
     // store in heap, its gonna change
-    let text: String = String::new();
-    let candy = String::from("Kitkat");
+    let mut candy: String = String::from("Kitkat");
+    println!("{candy}");
 
+    candy.push_str(" Candy");
+
+    println!("{candy}");
+
+    // if text is too long, it will move to the new heap location automatically
+    candy.push_str(" Candy fgdfgdfgdfgdfgdg");
     println!("{candy}");
 }
