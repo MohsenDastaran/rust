@@ -2,9 +2,12 @@ fn main() {
     let person: String = String::from("Mohsen");
     let mo: String = person;
 
-    // println!("{}", person);
+    // no drop:
     println!("{}", mo);
 
-    // 1 memory but 2 refrences(pointers), who's responsible for cleaning up?
-    // rust will move the ownership to second variable
-}
+    // drop manually
+    drop(mo);
+
+    // error:
+    // println!("{}", mo);
+} // auto drop on closing curly bracket
