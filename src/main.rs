@@ -1,31 +1,16 @@
 fn main() {
-    let is_concert = true;
-    let is_event = is_concert;
-    println!("Is it a concert? {}", is_concert);
+    let mut current_meal: String = String::new();
+    add_flour(&mut current_meal);
 
-    // /////////////////////////////////////// //
-
-    // let sushi = "Salmon";
-    // let dinner = sushi;
-    // println!("What is for dinner? {}", sushi);
-    // println!("What is for dinner? {}", dinner);
-
-    // /////////////////////////////////////// //
-
-    let sushi: String = String::from("Salmon");
-    let dinner: String = sushi;
-    // println!("What is for dinner? {}", sushi);
-    println!("What is for dinner? {}", dinner);
-
-    // /////////////////////////////////////// //
-
-    let meal: String = String::from("Salmon");
-    let cloned_meal: String = meal.clone();
-    let cleared: String = eat_meal(meal);
-    println!("old: {} , new: {}", cloned_meal, cleared);
+    fn add_flour(meal: &mut String) {
+        meal.push_str(" with flour")
+    }
 }
+// we do this to avoid
+// unnecessary return of the String
 
-fn eat_meal(mut s: String) -> String {
-    s.clear();
-    s
-}
+// type options:
+// meal: String : regular string
+// mut meal: String : mutable string
+// meal: &String : reference to a string
+//  meal: &mut String : mutable reference to a string
