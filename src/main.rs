@@ -1,21 +1,31 @@
 fn main() {
-    let current_meal: String = String::new();
-    let fl: String = add_flour(current_meal);
-    let su: String = add_sugar(fl);
+    let is_concert = true;
+    let is_event = is_concert;
+    println!("Is it a concert? {}", is_concert);
 
-    println!("{}! ", su);
+    // /////////////////////////////////////// //
+
+    // let sushi = "Salmon";
+    // let dinner = sushi;
+    // println!("What is for dinner? {}", sushi);
+    // println!("What is for dinner? {}", dinner);
+
+    // /////////////////////////////////////// //
+
+    let sushi: String = String::from("Salmon");
+    let dinner: String = sushi;
+    // println!("What is for dinner? {}", sushi);
+    println!("What is for dinner? {}", dinner);
+
+    // /////////////////////////////////////// //
+
+    let meal: String = String::from("Salmon");
+    let cloned_meal: String = meal.clone();
+    let cleared: String = eat_meal(meal);
+    println!("old: {} , new: {}", cloned_meal, cleared);
 }
 
-fn add_flour(mut meal: String) -> String {
-    meal.push_str(" with flour");
-    meal
+fn eat_meal(mut s: String) -> String {
+    s.clear();
+    s
 }
-
-fn add_sugar(mut meal: String) -> String {
-    meal.push_str(" with sugar");
-    meal
-}
-
-//  HOW TO AVOID RETURNING THE VALUE OF A VARIABLE IN RUST:
-
-// Next Section is about that: Refrences
