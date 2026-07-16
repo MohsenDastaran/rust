@@ -1,6 +1,8 @@
 fn main() {
     let mut current_meal: String = String::new();
+    println!("What is your meal? {}", current_meal);
     add_flour(&mut current_meal);
+    println!("What is your meal? {}", current_meal);
 
     fn add_flour(meal: &mut String) {
         meal.push_str(" with flour")
