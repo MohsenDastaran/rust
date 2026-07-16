@@ -1,8 +1,9 @@
 fn main() {
-    let burger: String = String::from("burger");
-    add_fries(burger);
+    let cake: String = bake_cake();
+    println!("I baked a {}!", cake);
 }
-fn add_fries(mut meal: String) {
-    meal.push_str(" with fries");
-    println!("Meal: {}", meal);
+
+fn bake_cake() -> String {
+    String::from("Chocolate cake") //  last expression is returned
+    // if we dont return the value, the value will be dropped
 }
