@@ -1,8 +1,10 @@
 fn main() {
-    let mut cofee = String::from("Mocha");
-    let a = &mut cofee;
+    let city = create_city();
+    println!("City: {}", city);
+}
 
-    let b = &a;
-
-    println!("a: {}, b: {}", a, b);
+// dangling reference example, city will be dropped at the end of the function and the reference will be invalid
+fn create_city() -> String {
+    let city = String::from("Sari");
+    city
 }
