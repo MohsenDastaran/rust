@@ -1,7 +1,8 @@
 fn main() {
-    let mut car: String = String::from("Red");
-    let ref1: &String = &mut car; // reference to car
-    let ref2: &String = &car; // another reference to car
+    let mut cofee = String::from("Mocha");
+    let a = &mut cofee;
 
-    println!("ref1: {}, ref2: {}", ref1, ref2);
+    let b = &a;
+
+    println!("a: {}, b: {}", a, b);
 }
