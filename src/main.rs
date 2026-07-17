@@ -1,18 +1,9 @@
 fn main() {
-    let mut current_meal: String = String::new();
-    println!("What is your meal? {}", current_meal);
-    add_flour(&mut current_meal);
-    println!("What is your meal? {}", current_meal);
+    let  car: String = String::from("Red");
+    let ref1: &String = &car; // reference to car
+    let ref2: &String = &car; // another reference to car
 
-    fn add_flour(meal: &mut String) {
-        meal.push_str(" with flour")
-    }
+
+    println!("ref1: {}, ref2: {}", ref1, ref2);
 }
-// we do this to avoid
-// unnecessary return of the String
 
-// type options:
-// meal: String : regular string
-// mut meal: String : mutable string
-// meal: &String : reference to a string
-//  meal: &mut String : mutable reference to a string
