@@ -1,15 +1,12 @@
 #[derive(Debug)]
-enum  CardSuit {
-    Heart, Diamond, Spades, Clubs
-}
-struct Card {
-    rank: String,
-    suit: CardSuit
-}
-fn main() {
-    let mut first_card = CardSuit::Diamond;
+enum  PaymentMethodType {
+   CreditType(String),
+   Paypal(String)
 
-    // first_card = "sdc"            //expected CardSuit, found &'static str
-    println!("{:#?}", first_card);
+}
+
+fn main() {
+let visa = PaymentMethodType::CreditType(String::from("4544-6545-654-654"));
+    println!("{:#?}", visa);
 
 }
