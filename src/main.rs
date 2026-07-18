@@ -1,3 +1,4 @@
+#[derive(Debug)]
 struct Cofee {
     name: String,
     price: f64,
@@ -14,6 +15,7 @@ fn main() {
         ..cofee // it should be on last line of the struct
     };
 
+    println!("{:?}", caramel_macchiato);
     println!("{}", caramel_macchiato.name);
 
     // update the name of the coffee
