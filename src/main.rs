@@ -5,6 +5,13 @@ struct Song {
     duration_secs: u64,
 }
 impl Song {
+    fn new(title: String, release_year: u64, duration_secs: u64) -> Self {
+        Self {
+            title,
+            release_year,
+            duration_secs,
+        }
+    }
     fn display_song_info(&self) {
         // we have options for self:
         // self: takes ownership of the instance
@@ -26,11 +33,15 @@ impl Song {
     }
 }
 fn main() {
-    let mut song = Song {
-        title: "Creep".into(),
-        release_year: 2020,
-        duration_secs: 200,
-    };
+    // let mut song = Song {
+    //     title: "Creep".into(),
+    //     release_year: 2020,
+    //     duration_secs: 200,
+    // };
+
+    // using assosciated function to create a new instance of Song
+    let mut song = Song::new("Creep".into(), 2020, 200);
+
     song.double_duration();
 
     let another_song = Song {
