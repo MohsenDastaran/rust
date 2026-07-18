@@ -9,7 +9,7 @@ fn main() {
     println!("{}", cofee.name);
 
     //  new cofee with ..
-    let caramel_macchiato = Cofee {
+    let mut caramel_macchiato = Cofee {
         name: String::from("Caramel Macchiato"),
         ..cofee // it should be on last line of the struct
     };
@@ -17,6 +17,7 @@ fn main() {
     println!("{}", caramel_macchiato.name);
 
     // update the name of the coffee
+    drink_cofee(&mut caramel_macchiato);
 }
 
 fn make_coffee(name: String, price: f64, is_hot: bool) -> Cofee {
@@ -25,4 +26,9 @@ fn make_coffee(name: String, price: f64, is_hot: bool) -> Cofee {
         price,
         is_hot,
     }
+}
+fn drink_cofee(coffee: &mut Cofee) {
+    println!("D {}", coffee.name); // works only with &Cofee in parameter , we cant edit
+    coffee.name = String::from("Cappuccino");
+    println!("D {}", coffee.name); // works only with &mut Cofee in parameter , we can edit
 }
