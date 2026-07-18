@@ -1,36 +1,33 @@
 #[derive(Debug)]
-struct Cofee {
-    name: String,
-    price: f64,
-    is_hot: bool,
+struct Song {
+    title: String,
+    release_year: u64,
+    release_secs: u64,
 }
+impl Song {
+    fn display_song_info(self) {
+        // we have options for self:
+        //  passing immutably: &self (self parameter takes ownership of the instance)
+        //  passing mutably: &mut self (self parameter takes ownership of the instance and allows mutation)
+        // immutable reference: &self (self parameter takes a reference to the instance)
 
-fn main() {
-    let cofee: Cofee = make_coffee("name".into(), 3.5, true);
-    println!("{}", cofee.name);
-
-    //  new cofee with ..
-    let mut caramel_macchiato = Cofee {
-        name: String::from("Caramel Macchiato"),
-        ..cofee // it should be on last line of the struct
-    };
-
-    println!("{:?}", caramel_macchiato);
-    println!("{}", caramel_macchiato.name);
-
-    // update the name of the coffee
-    drink_cofee(&mut caramel_macchiato);
-}
-
-fn make_coffee(name: String, price: f64, is_hot: bool) -> Cofee {
-    Cofee {
-        name,
-        price,
-        is_hot,
+        println!("Song: {}", self.title);
+        println!("Release Year: {}", self.release_year);
+        println!("Release Seconds: {}", self.release_secs);
     }
 }
-fn drink_cofee(coffee: &mut Cofee) {
-    println!("D {}", coffee.name); // works only with &Cofee in parameter , we cant edit
-    coffee.name = String::from("Cappuccino");
-    println!("D {}", coffee.name); // works only with &mut Cofee in parameter , we can edit
+fn main() {
+    let song = Song {
+        title: "Creep".into(),
+        release_year: 2020,
+        release_secs: 200,
+    };
+    song.display_song_info();
+
+    Song {
+        title: "Crsdfsdfeep".into(),
+        release_year: 244020,
+        release_secs: 24545400,
+    }
+    .display_song_info();
 }
