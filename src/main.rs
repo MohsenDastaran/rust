@@ -1,58 +1,39 @@
 #[derive(Debug)]
-struct Song {
-    title: String,
-    release_year: u64,
-    duration_secs: u64,
+struct Computer {
+    cpu: String,
+    memory: i32,
+    hard_drive: i32,
 }
-impl Song {
-    fn new(title: String, release_year: u64, duration_secs: u64) -> Self {
+
+impl Computer {
+    fn new(cpu: String, memory: i32, hard_drive: i32) -> Self {
         Self {
-            title,
-            release_year,
-            duration_secs,
+            cpu,
+            memory,
+            hard_drive,
         }
     }
-    fn display_song_info(&self) {
-        // we have options for self:
-        // self: takes ownership of the instance
-        //  passing immutably: &self (self parameter takes ownership of the instance)
-        //  passing mutably: &mut self (self parameter takes ownership of the instance and allows mutation)
-        // immutable reference: &self (self parameter takes a reference to the instance)
-
-        println!("Song: {}", self.title);
-        println!("Release Year: {}", self.release_year);
-        println!("Duration Seconds: {}", self.duration_secs);
+    fn upgrade_cpu(&mut self, new_cpu: String) -> &mut Self {
+        self.cpu = new_cpu;
+        self
     }
-    fn double_duration(&mut self) {
-        self.duration_secs *= 2;
-        self.display_song_info();
+    fn upgrade_memory(&mut self, new: i32) -> &mut Self{
+        self.memory = new;
+        self
     }
-
-    fn is_longer(&self, other: &Song) -> bool {
-        self.duration_secs > other.duration_secs
+    fn upgrade_hard_drive(&mut self, new_space: i32)-> &mut Self {
+        self.hard_drive = new_space;
+        self
     }
 }
 fn main() {
-    // let mut song = Song {
-    //     title: "Creep".into(),
-    //     release_year: 2020,
-    //     duration_secs: 200,
-    // };
+    let mut my_computer = Computer::new("Intel".to_string(), 16, 512);
 
-    // using assosciated function to create a new instance of Song
-    let mut song = Song::new("Creep".into(), 2020, 200);
 
-    song.double_duration();
+    println!("Hello, {:?}", my_computer);
 
-    let another_song = Song {
-        title: "Some Other Song".into(),
-        release_year: 2010,
-        duration_secs: 20,
-    };
-    println!(
-        "Is {} longer than {}? {}",
-        song.title,
-        another_song.title,
-        song.is_longer(&another_song)
-    );
+    my_computer.upgrade_cpu("AMD".to_string()).upgrade_hard_drive(120).upgrade_memory(16);
+
+    println!("New, {:?}", my_computer);
+
 }
