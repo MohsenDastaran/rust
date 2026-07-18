@@ -18,7 +18,11 @@ impl Song {
     }
     fn double_duration(&mut self) {
         self.duration_secs *= 2;
-        println!("Doubled Duration Seconds: {:?}", self.duration_secs);
+        self.display_song_info();
+    }
+
+    fn is_longer(&self, other: &Song) -> bool {
+        self.duration_secs > other.duration_secs
     }
 }
 fn main() {
@@ -28,5 +32,16 @@ fn main() {
         duration_secs: 200,
     };
     song.double_duration();
-    song.display_song_info();
+
+    let another_song = Song {
+        title: "Some Other Song".into(),
+        release_year: 2010,
+        duration_secs: 20,
+    };
+    println!(
+        "Is {} longer than {}? {}",
+        song.title,
+        another_song.title,
+        song.is_longer(&another_song)
+    );
 }
