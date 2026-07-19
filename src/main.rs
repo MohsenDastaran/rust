@@ -1,36 +1,26 @@
-#[derive(Debug)]
-enum Beans {
-    Black,
-    Pinto,
+enum Milk {
+    Lowfat(i32),
+    Whole,
+    NonDiary { kind: String },
 }
 
-
-#[derive(Debug)]
-enum Meat {
-    Chicken,
-    Beaf,
-}
-
-#[derive(Debug)]
-
-enum ResaurantItem {
-    Burrito(Meat),
-    Bowl {meat: Meat, beans: Beans},
-    Vegan,
-}
-impl ResaurantItem {
-    fn reject_meal(self) {
-        println!("Rejecting: {self:?}")
-    }
-}
 fn main() {
-    let lunch = ResaurantItem::Burrito(Meat::Chicken);
-    let dinner = ResaurantItem::Burrito(Meat::Beaf);
+    let my_beverage = Milk::Whole;
+    if let Milk::Whole = my_beverage {
+        println!("fdgdfgdfg")
+    }
 
-    let brunch = ResaurantItem::Bowl {meat: Meat::Beaf, beans: Beans::Black };
+    let my_beverage2 = Milk::Lowfat(12);
 
-    println!("{:?}, {:?}, {brunch:?}", lunch, dinner);
+    if let Milk::Lowfat(percent) = my_beverage2 {
+        println!("fdgdfgdfg {percent}")
+    }
 
+    let my_beverage3 = Milk::NonDiary {
+        kind: "Hahaaaaaa".into(),
+    };
 
-    dinner.reject_meal();
+    if let Milk::NonDiary { kind } = my_beverage3 {
+        println!("Kind: {kind}")
+    }
 }
