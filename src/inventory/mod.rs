@@ -6,12 +6,14 @@ enum ProductCategory {
     Ladder,
     Hammer,
 }
-struct Item {
+pub struct Item {
     name: String,
     category: ProductCategory,
     quantity: u32,
 }
 
 pub fn talk_to_manager() {
-    println!("Hey {MANAGER}, Hahahaha")
+    println!("Hey {MANAGER}, Hahahaha");
 }
+
+pub mod products;
