@@ -3,6 +3,14 @@ fn main() {
     // movies.push("Usual suspect")  // doesnt work
 
     // let vec_movies: Vec<String> = Vec::<String>::new();  //empty
-    let vec_movies: Vec<String> = vec!["Se7en".into(), "Titanic".into()];
+    let mut vec_movies: Vec<String> = vec!["Se7en".into(), "Titanic".into()];
+    println!("{:?}", vec_movies);
+
+    vec_movies.push("Inception".into());
+    vec_movies.push("Test".into());
+    vec_movies.pop();
+    println!("{:?}", vec_movies);
+
+    vec_movies.remove(1);
     println!("{:?}", vec_movies)
 }
