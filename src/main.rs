@@ -7,6 +7,6 @@ fn main() {
 
     let base: Option<&String> = instruments.get(20);
     println!("{base:?}");
-    // println!("{}", base.unwrap()); // to get the raw value
-    println!("{}", base.expect("Error Happened Mohsen")) // to get the raw value with Error handling
+    println!("{}", base.unwrap_or(&String::from("Singer"))); // to get the raw value
+    // println!("{}", base.expect("Error Happened Mohsen")) // to get the raw value with Error handling
 }
