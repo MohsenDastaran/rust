@@ -1,6 +1,10 @@
 fn main() {
-    let a = Option::Some(23); // some represent that we have the 
-    let b = Option::Some("Hello"); // some represent that we have 
+    let instruments = [
+        String::from("Guitar"),
+        String::from("Piano"),
+        String::from("Tar"),
+    ];
 
-    let c: Option<String> = Option::None;
+    let base: Option<&String> = instruments.get(10);
+    println!("{base:?}")
 }
