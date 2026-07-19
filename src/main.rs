@@ -12,5 +12,10 @@ fn main() {
     println!("{:?}", vec_movies);
 
     vec_movies.remove(1);
-    println!("{:?}", vec_movies)
+    println!("{:?}", vec_movies);
+
+    let mut another = vec_movies;
+    another.remove(1);
+
+    println!("{:?}", another);
 }
