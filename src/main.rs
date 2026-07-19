@@ -1,7 +1,7 @@
 fn main() {
     println!("{}", add_5(5));
-    identity(5);
-    identity("sdfsdvc");
+    identity::<i32>(5);
+    identity::<&str>("sdfsdvc");
     identity(true);
 }
 // normal parameter type
