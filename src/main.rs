@@ -1,16 +1,15 @@
-enum Milk {
-    Lowfat(i32),
-    Whole,
-    NonDiary { kind: String },
+fn main() {
+    println!("{}", add_5(5));
+    identity(5);
+    identity("sdfsdvc");
+    identity(true);
+}
+// normal parameter type
+fn add_5(value: i32) -> i32 {
+    value + 5
 }
 
-fn main() {
-    let my_beverage = Milk::Whole;
-
-    let Milk::Lowfat(percent) = my_beverage else {
-        println!("There is no percent here");
-        return;
-    };
-
-    println!("{}", percent)
+//  but here, i want a function to have dynamic value
+fn identity<T: std::fmt::Debug>(value: T) {
+    println!("{:?}", value)
 }
