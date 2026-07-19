@@ -18,12 +18,19 @@ enum ResaurantItem {
     Bowl {meat: Meat, beans: Beans},
     Vegan,
 }
-
+impl ResaurantItem {
+    fn reject_meal(self) {
+        println!("Rejecting: {self:?}")
+    }
+}
 fn main() {
     let lunch = ResaurantItem::Burrito(Meat::Chicken);
     let dinner = ResaurantItem::Burrito(Meat::Beaf);
 
     let brunch = ResaurantItem::Bowl {meat: Meat::Beaf, beans: Beans::Black };
 
-    println!("{:?}, {:?}, {brunch:?}", lunch, dinner)
+    println!("{:?}, {:?}, {brunch:?}", lunch, dinner);
+
+
+    dinner.reject_meal();
 }
