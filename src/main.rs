@@ -1,12 +1,6 @@
 fn main() {
-    let instruments: [String; 3] = [
-        String::from("Guitar"),
-        String::from("Piano"),
-        String::from("Tar"),
-    ];
-
-    let base: Option<&String> = instruments.get(20);
-    println!("{base:?}");
-    println!("{}", base.unwrap_or(&String::from("Singer"))); // to get the raw value
-    // println!("{}", base.expect("Error Happened Mohsen")) // to get the raw value with Error handling
+    let ok: Result<i32, String> = Result::Ok(5);
+    let disaster: Result<i32, &str> = Result::Err("Error");
+    println!("{ok:?}");
+    println!("{disaster:?}");
 }
