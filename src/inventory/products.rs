@@ -1,9 +1,11 @@
-pub const FLOOR_SPACE: i32 = 10;
-pub const MANAGER: &str = "Dastaran";
+use fake::Dummy;
+
+#[derive(Debug, Dummy)]
 pub enum ProductCategory {
     Ladder,
     Hammer,
 }
+#[derive(Debug, Dummy)]
 pub struct Item {
     name: String,
     category: ProductCategory,
