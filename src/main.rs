@@ -12,5 +12,7 @@ fn main() {
 
     country_capitals.insert("Iran", "Tehran");
     country_capitals.insert("Germany", "Berlin");
+    country_capitals.remove("Iran");
+
     println!("Testing Main {:?}", country_capitals);
 }
