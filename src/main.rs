@@ -1,7 +1,7 @@
-mod inventory;
+// mod inventory;
+// use crate::inventory::products::ProductCategory;
 use fake::{Fake, Faker};
-
-use crate::inventory::products::ProductCategory;
+use warehouse::{ProductCategory, inventory};
 
 use std::collections::*;
 
