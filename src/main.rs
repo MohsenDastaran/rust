@@ -8,6 +8,6 @@ fn main() {
 
     println!("{}", menu["Ghorme"]);
 
-    menu.insert("Ghorme".into(), 11.00);
-    println!("{}", menu["Ghorme"]); // see the value is replaced
+    menu.entry("Ghorme".into()).or_insert(11.00); // add if the key does not exist  (do not replace if exist )
+    println!("{}", menu["Ghorme"]);
 }
