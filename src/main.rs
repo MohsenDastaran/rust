@@ -1,7 +1,7 @@
 use std::fs::File;
 use std::process;
 
-use std::io::stdin;
+use std::io::{Read, stdin};
 fn main() {
     println!("Please enter the file path");
 
@@ -20,11 +20,11 @@ fn main() {
 
     // if error hapened
     if let Err(_error) = user_req_file {
-        println!("Something Went Wrong!");
+        eprintln!("Something Went Wrong!");
         process::exit(2)
     }
 
-    let story: File = match File::open(input.trim()) {
+    let mut story: File = match File::open(input.trim()) {
         Ok(file) => file,
         Err(error) => {
             eprintln!("Error Happened, File is missing: {error:?}. user output: {input}");
@@ -32,4 +32,12 @@ fn main() {
         }
     };
     println!("{:?}", story);
+
+    let mut file_contents = String::new();
+    let read_operation = story.read_to_string(&mut file_contents);
+    if let Err(_error) = read_operation {
+        eprintln!("Something Went Wrong!");
+        process::exit(2)
+    }
+    println!("{}", file_contents);
 }
