@@ -1,13 +1,10 @@
-use std::collections::HashMap;
+use std::collections::HashSet;
 
 fn main() {
-    let mut menu: HashMap<String, f32> = HashMap::new();
-    menu.insert("Ghorme".into(), 19.23);
-    menu.insert("Gheyme".into(), 19.00);
-    menu.insert("Kabab".into(), 24.99);
+    let mut concert_queue: HashSet<&str> = HashSet::new(); // HashSet prevents duplicate value
 
-    println!("{}", menu["Ghorme"]);
-
-    menu.entry("Ghorme".into()).or_insert(11.00); // add if the key does not exist  (do not replace if exist )
-    println!("{}", menu["Ghorme"]);
+    concert_queue.insert("value");
+    concert_queue.insert("value");
+    concert_queue.insert("value");
+    println!("{:?}", concert_queue)
 }
