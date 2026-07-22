@@ -1,4 +1,13 @@
+use std::fs::File;
+use std::process;
 fn main() {
-    println!("Ok");
-    eprintln!("Error") // No difference in terminal output, but in the cargo run -q > a.txt
+    // std::io::Error is for when the file doesnt exist
+    let story: File = match File::open("./story.txt") {
+        Ok(file) => file,
+        Err(error) => {
+            eprintln!("Error Happened, File is missing");
+            process::exit(1)
+        }
+    };
+    println!("{:?}", story);
 }
