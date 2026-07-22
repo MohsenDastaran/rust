@@ -2,9 +2,9 @@ use std::{collections::HashMap, fmt::format};
 
 fn main() {
     let mut hotel = Hotel::new("California");
-    println!("{}", hotel.get_description());
     hotel.book("Asghar", 4);
     println!("{:#?}", hotel);
+    println!("{:#?}", hotel.summarize());
 
     let mut air_bnb = AirBnB::new("Mohsen");
     println!("{}", air_bnb.get_description());
@@ -27,6 +27,9 @@ impl Hotel {
             name: name.to_string(),
             reservations: HashMap::new(),
         }
+    }
+    fn summarize(&self) -> String {
+        format!("{}: {}", self.name, self.get_description())
     }
 }
 
