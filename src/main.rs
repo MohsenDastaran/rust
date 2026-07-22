@@ -1,7 +1,7 @@
-use std::fs::File;
+use std::fs;
 use std::process;
 
-use std::io::{self, Read, stdin};
+use std::io::{self, stdin};
 fn main() {
     let content: Result<String, io::Error> = read_file();
     match content {
@@ -19,12 +19,5 @@ fn read_file() -> Result<String, io::Error> {
     let mut input = String::new();
 
     stdin().read_line(&mut input)?;
-
-    let mut story = File::open(input.trim())?;
-
-    let mut file_contents = String::new();
-
-    story.read_to_string(&mut file_contents)?;
-
-    return Ok(file_contents);
+    fs::read_to_string(input.trim())
 }
