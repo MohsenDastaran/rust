@@ -1,14 +1,30 @@
-fn main() {
-    let mut animals = vec!["zebra", "monkey", "leopard"];
-    println!("{:?}", length_of_last_element(&mut animals));
-    println!("{:?}", length_of_last_element(&mut animals));
-    println!("{:?}", length_of_last_element(&mut animals));
-    println!("{:?}", length_of_last_element(&mut animals));
-    println!("{:?}", length_of_last_element(&mut animals));
-    println!("{:?}", length_of_last_element(&mut animals))
+use std::collections::HashMap;
+
+trait Accomomdation {
+    fn get_description(&self) -> String;
+    fn book(&mut self, name: &str, nights: u32);
+}
+#[derive(Debug)]
+struct Hotel {
+    name: String,
+    reservations: HashMap<String, u32>,
+}
+impl Hotel {
+    fn new(name: &str) -> Self {
+        Self {
+            name: name.to_string(),
+            reservations: HashMap::new(),
+        }
+    }
 }
 
-fn length_of_last_element(input: &mut Vec<&str>) -> Option<usize> {
-    let last = input.pop()?;
-    Some(last.len())
+impl Accomomdation for Hotel {
+    fn get_description(&self) -> String {
+        format!("{} is a luxury", self.name)
+    }
+    fn book(&mut self, name: &str, nights: u32) {
+        self.reservations.insert(name.to_string(), nights);
+    }
 }
+
+fn main() {}
