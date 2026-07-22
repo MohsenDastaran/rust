@@ -1,9 +1,4 @@
-use std::process;
-
 fn main() {
-    let a = 5;
-    process::exit(0); // 0 means no error
-    process::exit(1); // 01 or more means error: unreachable statement
-
-    println!("sdv") // unreachable
+    println!("Ok");
+    eprintln!("Error") // No difference in terminal output, but in the cargo run -q > a.txt
 }
