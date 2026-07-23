@@ -4,9 +4,20 @@ fn main() {
     let my_vetor = vec![5, 12, 500, 214, 5];
     let mut my_iterable = my_vetor.into_iter(); // make vector iterable
 
-    println!("{:?}", my_iterable.next());
-    println!("{:?}", my_iterable.next());
-    println!("{:?}", my_iterable);
+    for number in my_iterable {
+        println!("{:?}", number);
+    }
+    // println!("{:?}", my_iterable); // for loop, borrowed it.
+
+    println!("------------------------------------------------------------------",);
+
+    let my_vetor_2 = vec![5, 12, 500, 214, 5];
+
+    // but this will work too, why?
+    // because rust will turn it to iterable for for loop
+    for number in my_vetor_2 {
+        println!("{:?}", number);
+    }
 
     // bool
     // let my_vetor_bool: Vec<bool> = vec![true, false, true];
