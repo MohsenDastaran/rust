@@ -14,24 +14,24 @@ fn main() {
 
 // T is Accomomdation trait here
 fn book_for_one_night<T: Accomomdation>(entity: &mut T, guest: &str) {
-    println!("{}", entity.get_description());
     entity.book(guest, 1);
 }
-// fn mix_and_match(first: &mut impl Accomomdation, second: &mut impl Accomomdation, guest: &str) {
-//     first.book(guest, 1);
-//     second.book(guest, 1);
-// }
-
-// Another Option: using Generic(T & U)  // I like First Option Above
-fn mix_and_match<T: Accomomdation, U: Accomomdation>(first: &mut T, second: &mut U, guest: &str) {
+fn mix_and_match(
+    first: &mut (impl Accomomdation + Description),
+    second: &mut impl Accomomdation,
+    guest: &str,
+) {
     first.book(guest, 1);
     second.book(guest, 1);
 }
 
 trait Accomomdation {
-    fn get_description(&self) -> String;
     fn book(&mut self, name: &str, nights: u32);
 }
+trait Description {
+    fn get_description(&self) -> String;
+}
+
 #[derive(Debug)]
 struct Hotel {
     name: String,
@@ -50,11 +50,13 @@ impl Hotel {
 }
 
 impl Accomomdation for Hotel {
-    fn get_description(&self) -> String {
-        format!("Welcome to the Hotel {}", self.name)
-    }
     fn book(&mut self, name: &str, nights: u32) {
         self.reservations.insert(name.to_string(), nights);
+    }
+}
+impl Description for Hotel {
+    fn get_description(&self) -> String {
+        format!("Welcome to the Hotel {}", self.name)
     }
 }
 #[derive(Debug)]
@@ -73,10 +75,13 @@ impl AirBnB {
     }
 }
 impl Accomomdation for AirBnB {
-    fn get_description(&self) -> String {
-        format!("Please Enjoy {}'s Room", self.host)
-    }
     fn book(&mut self, name: &str, nights: u32) {
         self.guests.push((name.to_string(), nights))
+    }
+}
+
+impl Description for AirBnB {
+    fn get_description(&self) -> String {
+        format!("Please Enjoy {}'s Room", self.host)
     }
 }
