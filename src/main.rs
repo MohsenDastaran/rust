@@ -2,16 +2,18 @@ use std::{collections::HashMap, fmt::format};
 
 fn main() {
     let mut hotel = Hotel::new("California");
-    hotel.book("Asghar", 4);
-    println!("{:#?}", hotel);
-    println!("{:#?}", hotel.summarize());
+    book_for_one_night(&mut hotel, "Guest 1");
+    println!("{:?}", hotel);
 
     let mut air_bnb = AirBnB::new("Mohsen");
-    println!("{}", air_bnb.get_description());
-    air_bnb.book("Ali", 8);
+    book_for_one_night(&mut air_bnb, "Guest 1");
     println!("{:?}", air_bnb);
 }
-
+//  Accomomdation here means entity will be any types that implements Accomomdation trait (Hotel & AirBnB)
+fn book_for_one_night(entity: &mut impl Accomomdation, guest: &str) {
+    println!("{}", entity.get_description());
+    entity.book(guest, 1);
+}
 trait Accomomdation {
     fn get_description(&self) -> String;
     fn book(&mut self, name: &str, nights: u32);
