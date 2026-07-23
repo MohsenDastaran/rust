@@ -8,12 +8,26 @@ fn main() {
     let mut air_bnb = AirBnB::new("Mohsen");
     book_for_one_night(&mut air_bnb, "Guest 1");
     println!("{:?}", air_bnb);
+    mix_and_match(&mut hotel, &mut air_bnb, "Gholam");
+    println!("{:?} {:?}", hotel, air_bnb);
 }
-//  Accomomdation here means entity will be any types that implements Accomomdation trait (Hotel & AirBnB)
-fn book_for_one_night(entity: &mut impl Accomomdation, guest: &str) {
+
+// T is Accomomdation trait here
+fn book_for_one_night<T: Accomomdation>(entity: &mut T, guest: &str) {
     println!("{}", entity.get_description());
     entity.book(guest, 1);
 }
+// fn mix_and_match(first: &mut impl Accomomdation, second: &mut impl Accomomdation, guest: &str) {
+//     first.book(guest, 1);
+//     second.book(guest, 1);
+// }
+
+// Another Option: using Generic(T & U)  // I like First Option Above
+fn mix_and_match<T: Accomomdation, U: Accomomdation>(first: &mut T, second: &mut U, guest: &str) {
+    first.book(guest, 1);
+    second.book(guest, 1);
+}
+
 trait Accomomdation {
     fn get_description(&self) -> String;
     fn book(&mut self, name: &str, nights: u32);
