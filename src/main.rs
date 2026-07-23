@@ -11,6 +11,11 @@ fn main() {
     //Hashmap
     let mut my_hashmap: HashMap<&str, i32> = HashMap::new();
     my_hashmap.insert("CBS", 2);
+    my_hashmap.insert("Intl", 3);
+    my_hashmap.insert("BBC", 4);
 
-    let my_iterable_hashmap: hash_map::IntoIter<&str, i32> = my_hashmap.into_iter();
+    println!("{:?}", my_hashmap);
+    let my_iterable_hashmap: hash_map::IntoIter<&str, i32> = my_hashmap.into_iter(); // make vector iterable
+
+    println!("{:?}", my_iterable_hashmap);
 }
