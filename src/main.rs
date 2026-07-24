@@ -35,5 +35,11 @@ fn main() {
         .enumerate()
         .filter(|(index, num)| *index > 15)
         .collect();
-    println!("enumerate: {:?}", enumerate)
+    println!("enumerate: {:?}", enumerate);
+
+    // partition method: its like filter, but it gives removed values too(in a different data).
+
+    //filter
+    let even_nums_part: (Vec<i32>, Vec<i32>) = nums.into_iter().partition(|num| *num % 2 == 0);
+    println!("Partition:  {:?}", even_nums_part);
 }
