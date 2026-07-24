@@ -28,4 +28,12 @@ fn main() {
         .filter_map(|val| if *val > 100 { None } else { Some(*val * 2) })
         .collect();
     println!("{:?}", custom_values2);
+
+    // when i want to use index, i can use enumerate
+    let enumerate: Vec<_> = nums
+        .iter()
+        .enumerate()
+        .filter(|(index, num)| *index > 15)
+        .collect();
+    println!("enumerate: {:?}", enumerate)
 }
